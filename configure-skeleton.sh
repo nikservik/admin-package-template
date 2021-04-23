@@ -57,6 +57,12 @@ titlecase() {
         sed "s/ /$separator/g"
 }
 
+noadmin() {
+    # noadmin <input>
+    echo "$1" |
+        sed "s/admin-//g"
+}
+
 git_name=$(git config user.name)
 author_name=$(ask_question "Author name" "$git_name")
 
@@ -76,7 +82,8 @@ current_directory=$(pwd)
 folder_name=$(basename "$current_directory")
 
 package_name=$(ask_question "Package name" "$folder_name")
-package_slug=$(slugify "$package_name" "_")
+package_slug=$(slugify "$package_name" "-")
+package_prefix=$(noadmin "$package_slug")
 
 ClassName=$(titlecase "$package_name")
 ClassName=$(ask_question "Class Name" "$ClassName")
@@ -116,6 +123,7 @@ grep -E -r -l -i ":author|:vendor|:package|VendorName|skeleton" --exclude-dir=ve
         | sed "s/VendorName/$VendorName/g" \
         | sed "s/:package_name/$package_name/g" \
         | sed "s/package_slug/$package_slug/g" \
+        | sed "s/package_prefix/$package_prefix/g" \
         | sed "s/skeleton/$package_slug/g" \
         | sed "s/Skeleton/$ClassName/g" \
         | sed "s/:package_description/$package_description/g" \

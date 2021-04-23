@@ -1,5 +1,5 @@
 {
-    "name": "vendor_slug/package_slug",
+    "name": "vendor_slug/package_name",
     "description": ":package_description",
     "keywords": [
         ":vendor_name",
@@ -16,13 +16,10 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "spatie/laravel-package-tools": "^1.4.3",
+        "php": "^7.4|^8.0",
         "illuminate/contracts": "^8.0"
     },
     "require-dev": {
-        "brianium/paratest": "^6.2",
-        "nunomaduro/collision": "^5.3",
         "orchestra/testbench": "^6.15",
         "phpunit/phpunit": "^9.3",
         "spatie/laravel-ray": "^1.9",
@@ -31,7 +28,7 @@
     "autoload": {
         "psr-4": {
             "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "VendorName\\Skeleton\\Tests\\Database\\Factories\\": "tests/database/factories"
         }
     },
     "autoload-dev": {
@@ -51,12 +48,8 @@
         "laravel": {
             "providers": [
                 "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
-            }
+            ]
         }
     },
-    "minimum-stability": "dev",
     "prefer-stable": true
 }
