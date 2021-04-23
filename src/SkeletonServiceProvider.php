@@ -9,7 +9,7 @@ class SkeletonServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__.'/../routes.php');
-        $this->loadViewsFrom(__DIR__.'/../views', 'package_slug');
-        $this->loadTranslationsFrom(__DIR__.'/../lang', 'package_slug');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'package_slug');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'package_slug');
     }
 }

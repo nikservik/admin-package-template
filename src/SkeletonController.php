@@ -2,10 +2,9 @@
 
 namespace VendorName\Skeleton;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
-class SkeletonController extends Controller
+class SkeletonController
 {
     public static function routes()
     {

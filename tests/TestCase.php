@@ -21,11 +21,13 @@ class TestCase extends Orchestra
     {
         return [
             SkeletonServiceProvider::class,
+            TestViewsServiceProvider::class,
         ];
     }
 
     public function getEnvironmentSetUp($app)
     {
         config()->set('database.default', 'testing');
+        config()->set('app.fallback_locale', 'ru');
     }
 }
