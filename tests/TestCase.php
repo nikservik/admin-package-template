@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Lorisleiva\Actions\ActionServiceProvider;
 use Nikservik\AdminDashboard\AdminDashboardServiceProvider;
+use Nikservik\Users\UsersServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use VendorName\Skeleton\SkeletonServiceProvider;
 
@@ -32,7 +33,8 @@ class TestCase extends Orchestra
             SkeletonServiceProvider::class,
             AdminDashboardServiceProvider::class,
             ActionServiceProvider::class,
-        ];
+            UsersServiceProvider::class,
+       ];
     }
 
     public function getEnvironmentSetUp($app)
@@ -44,11 +46,11 @@ class TestCase extends Orchestra
     protected function defineDatabaseMigrations()
     {
         $this->loadLaravelMigrations();
-//        $this->loadMigrationsFrom(__DIR__ . '/../vendor/nikservik/simple-support/database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../vendor/nikservik/users/database/migrations');
     }
 
     protected function getBasePath(): string
     {
-        return __DIR__.'/../skeleton';
+        return __DIR__.'/../laravel';
     }
 }

@@ -4,12 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Auth;
-use Nikservik\SimpleSupport\Traits\SimpleSupport;
 use Nikservik\Users\Admin\AdminRoles;
 
 class User extends Auth
 {
-    use SimpleSupport;
     use HasFactory;
     use AdminRoles;
 

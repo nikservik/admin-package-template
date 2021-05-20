@@ -17,7 +17,7 @@ class SampleActionTest extends TestCase
     public function test_sample()
     {
         $this->actingAs($this->admin)
-            ->get("/")
+            ->get("/package_slug")
             ->assertStatus(200)
             ->assertSee('handle');
     }

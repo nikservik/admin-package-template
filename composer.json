@@ -36,8 +36,8 @@
     "autoload-dev": {
         "psr-4": {
             "VendorName\\Skeleton\\Tests\\": "tests",
-            "App\\": "skeleton/app/",
-            "Database\\Factories\\": "skeleton/database/factories/"
+            "App\\": "laravel/app/",
+            "Database\\Factories\\": "laravel/database/factories/"
         }
     },
     "scripts": {
@@ -66,6 +66,10 @@
         {
             "type": "vcs",
             "url" : "git@github.com:nikservik/admin-dashboard"
+        },
+        {
+            "type": "vcs",
+            "url" : "git@github.com:nikservik/users"
         }
     ]
 }

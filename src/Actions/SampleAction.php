@@ -29,6 +29,6 @@ class SampleAction
 
     public function asController(ActionRequest $request)
     {
-        return $this->handle();
+        return view('package_slug::index', ['result' => $this->handle()]);
     }
 }
