@@ -2,32 +2,53 @@
 
 namespace VendorName\Skeleton\Tests;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Lorisleiva\Actions\ActionServiceProvider;
+use Nikservik\AdminDashboard\AdminDashboardServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use VendorName\Skeleton\SkeletonServiceProvider;
 
 class TestCase extends Orchestra
 {
+    protected User $user;
+    protected User $admin;
+
     public function setUp(): void
     {
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Tests\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        $this->user = User::factory()->create();
+        $this->admin = User::factory()->create(['admin_role' => 4]);
     }
 
     protected function getPackageProviders($app)
     {
         return [
             SkeletonServiceProvider::class,
-            TestViewsServiceProvider::class,
+            AdminDashboardServiceProvider::class,
+            ActionServiceProvider::class,
         ];
     }
 
     public function getEnvironmentSetUp($app)
     {
-        config()->set('database.default', 'testing');
-        config()->set('app.fallback_locale', 'ru');
+        config()->set('database.default', 'mysql');
+        config()->set('app.locale', 'ru');
+    }
+
+    protected function defineDatabaseMigrations()
+    {
+        $this->loadLaravelMigrations();
+//        $this->loadMigrationsFrom(__DIR__ . '/../vendor/nikservik/simple-support/database/migrations');
+    }
+
+    protected function getBasePath(): string
+    {
+        return __DIR__.'/../skeleton';
     }
 }

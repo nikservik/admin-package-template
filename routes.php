@@ -1,5 +1,5 @@
 <?php
 
-use VendorName\Skeleton\SkeletonController;
+use VendorName\Skeleton\Actions\SampleAction;
 
-SkeletonController::routes();
+SampleAction::route();
