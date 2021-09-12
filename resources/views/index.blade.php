@@ -1,7 +1,5 @@
-@extends('admin-dashboard::layout')
-
-@section('content')
+<x-admin-dashboard-app>
     <h1 class="page-header mb-6">@lang('package_slug::admin.list-title')</h1>
 
     <div>{{ $result }}</div>
-@endsection
+</x-admin-dashboard-app>
