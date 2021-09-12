@@ -70,6 +70,10 @@
         {
             "type": "vcs",
             "url" : "git@github.com:nikservik/commons"
+        },
+        {
+            "type": "vcs",
+            "url" : "git@github.com:nikservik/user"
         }
     ]
 }
