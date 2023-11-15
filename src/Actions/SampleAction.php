@@ -18,7 +18,7 @@ class SampleAction
 
     public static function route(): void
     {
-        Route::get('/' . Config::get('package_slug.route'), static::class)
+        Route::get('/' . Config::get('package_slug.route') . '/action', static::class)
             ->middleware(['web', 'auth', AdminMiddleware::class]);
     }
 
