@@ -4,6 +4,7 @@ namespace VendorName\Skeleton\Tests;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Livewire\LivewireServiceProvider;
 use Lorisleiva\Actions\ActionServiceProvider;
 use Nikservik\AdminDashboard\AdminDashboardServiceProvider;
 use Nikservik\Users\UsersServiceProvider;
@@ -34,6 +35,7 @@ class TestCase extends Orchestra
             AdminDashboardServiceProvider::class,
             ActionServiceProvider::class,
             UsersServiceProvider::class,
+            LivewireServiceProvider::class,
        ];
     }
 

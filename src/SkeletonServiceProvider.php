@@ -5,6 +5,7 @@ namespace VendorName\Skeleton;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 use VendorName\Skeleton\Livewire\Index;
+use Nikservik\AdminMondar\Livewire\SampleModal;
 
 class SkeletonServiceProvider extends ServiceProvider
 {
@@ -35,6 +36,6 @@ class SkeletonServiceProvider extends ServiceProvider
     protected function registerLivewireComponents()
     {
         Livewire::component('package_slug-index', Index::class);
-        Livewire::component('package_slug-modal', Modal::class);
+        Livewire::component('package_slug-modal', SampleModal::class);
     }
 }
