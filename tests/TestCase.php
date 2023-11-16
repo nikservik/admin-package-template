@@ -4,6 +4,7 @@ namespace VendorName\Skeleton\Tests;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
 use Livewire\LivewireServiceProvider;
 use Lorisleiva\Actions\ActionServiceProvider;
 use Nikservik\AdminDashboard\AdminDashboardServiceProvider;
@@ -13,6 +14,8 @@ use VendorName\Skeleton\SkeletonServiceProvider;
 
 class TestCase extends Orchestra
 {
+    use InteractsWithViews;
+
     protected User $user;
     protected User $admin;
 
