@@ -14,13 +14,6 @@ class Index extends Component
         'updated' => '$refresh',
     ];
 
-    public array $openedFolders = [];
-    public string $currentCohort = '';
-    public bool $currentCohortInitialized = false;
-    public int $currentCohortUsers = 0;
-    public int $currentCohortQualifyingUsers = 0;
-    public array $currentCohortActions = [];
-
     public static function route(): void
     {
         Route::get('/' . Config::get('package_slug.route'), static::class)
@@ -32,6 +25,8 @@ class Index extends Component
         return View::make("package_slug::index", [])
             ->layout("admin-dashboard::components.app", [
                 'active' => 'package_slug',
+//                опционально раздел подменю модуля
+//                'active-sub' => 'main',
             ]);
     }
 }

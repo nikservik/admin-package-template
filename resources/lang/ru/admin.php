@@ -5,6 +5,11 @@ return [
     'dashboard-name' => ':package_name',
     'dashboard-description' => ':package_description',
     'dashboard-icon-path' => '',
+//    опциональное подменю модуля
+//    'dashboard-menu' => [
+//        'main' => 'Основной',
+//        'secondary' => 'Дополнительный',
+//    ],
 
     'list-title' => ':package_description',
     'list-empty' => 'Пусто',
